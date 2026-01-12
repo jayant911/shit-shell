@@ -47,21 +47,11 @@ impl Builtin for TypeComand {
                 println!("{} is a shell builtin", arg);
             } else if let Some(path) = find_executable_in_path(arg) {
                 // 2. Check PATH.
+                // TODO: impliment the PATH searching features using std library.
                 println!("{} is {}", arg, path.display());
             } else {
                 println!("{}: not found", arg);
             }
         }
-    }
-}
-
-// execute when found and unknown comman
-pub struct NotFound {
-    pub name: String,
-}
-
-impl Builtin for NotFound {
-    fn execute(&self) {
-        println!("{}: command not found", self.name)
     }
 }
