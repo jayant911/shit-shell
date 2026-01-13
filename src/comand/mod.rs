@@ -12,7 +12,7 @@ use builtins::TypeComand;
 use executable::Executable;
 
 // Lis of all the known command.
-pub const BUILT_IN_COMMANDS: [&str; 3] = ["exit", "echo", "type"];
+pub const BUILT_IN_COMMANDS: [&str; 4] = ["exit", "echo", "type", "cd"];
 
 pub enum Command {
     ExitCmd(ExitComand),
